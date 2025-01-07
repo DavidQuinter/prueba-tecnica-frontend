@@ -1,0 +1,327 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", serif;
+    font-optical-sizing: auto;
+}
+
+:root {
+    --evening-sea-50: #f1fcf9;
+    --evening-sea-100: #cff8ec;
+    --evening-sea-200: #9ef1dc;
+    --evening-sea-300: #66e2c7;
+    --evening-sea-400: #36cbaf;
+    --evening-sea-500: #1daf96;
+    --evening-sea-600: #158c7b;
+    --evening-sea-700: #157063;
+    --evening-sea-800: #155a51;
+    --evening-sea-900: #174d46;
+    --evening-sea-950: #062d2a;
+
+    --vulcan-50: #f6f6f9;
+    --vulcan-100: #ececf2;
+    --vulcan-200: #d5d5e2;
+    --vulcan-300: #b1b3c8;
+    --vulcan-400: #8689aa;
+    --vulcan-500: #676a90;
+    --vulcan-600: #525477;
+    --vulcan-700: #434461;
+    --vulcan-800: #3a3c52;
+    --vulcan-900: #343446;
+    --vulcan-950: #17171f;
+
+    --loulou-50: #fdf6fd;
+    --loulou-100: #f8edfa;
+    --loulou-200: #f2d9f5;
+    --loulou-300: #e9bbec;
+    --loulou-400: #dc93df;
+    --loulou-500: #c968cd;
+    --loulou-600: #ae49b0;
+    --loulou-700: #913a90;
+    --loulou-800: #773176;
+    --loulou-900: #632c61;
+    --loulou-950: #4d174b;
+
+
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+}
+
+#root {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+#user-card {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#user-card .user-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: var(--evening-sea-600);
+    color: var(--evening-sea-950);
+    text-align: center;
+    align-content: center;
+    border-radius: 8px;
+}
+
+#user-card .user-name {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#date {
+    padding: 12px 16px;
+}
+
+.dateComponent,
+.dateTime,
+.task-title,
+.task-description {
+    margin: 0;
+    padding: 0;
+}
+
+.dateComponent {
+    font-size: 24pt;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+
+}
+
+.main {
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dateTime {
+    font-size: 13pt;
+    font-weight: 500;
+}
+
+.task-container {
+    width: calc(100vw - 32px);
+    /*importante recordar este calculo*/
+    overflow: hidden;
+    background-color: var(--vulcan-600);
+    border-radius: 8px;
+    color: var(--vulcan-100);
+
+}
+
+.task-component {
+    display: inline-flex;
+    transition: transform .2s ease-in-out;
+}
+
+.task-text {
+    width: calc(calc(calc(100vw - 32px)/4) * 3);
+}
+
+.task-title {
+    font-size: 14pt;
+    font-weight: 500;
+    padding: 8px 12px 0;
+}
+
+.task-description {
+    font-size: 12pt;
+    padding: 4px 12px 12px;
+}
+
+.task-menu {
+    background-color: var(--vulcan-700);
+}
+
+.task-menu {
+    display: grid;
+}
+
+.task-menu,
+.task-options {
+    width: calc(calc(100vw - 32px)/4);
+    height: inherit;
+}
+
+.task-component[data-options='show'] {
+    transform: translatex(calc(-1 * calc(calc(100vw - 32px)/4)));
+}
+
+button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24pt;
+}
+
+.task-options {
+    height: inherit;
+    display: flex;
+
+}
+
+.btn-delete,
+.btn-check {
+    height: -webkit-fill-available;
+    width: inherit;
+}
+
+.btn-delete {
+    background-color: var(--loulou-600);
+}
+
+.btn-check {
+    background-color: var(--evening-sea-600);
+}
+
+#new-task {
+    margin: 12px 16px;
+    position: absolute;
+    bottom: 2%;
+    width: calc(100vw - 32px);
+}
+
+
+.btn-primary {
+    margin-top: 20px;
+    background-color: var(--evening-sea-900);
+    border-radius: 8px;
+    padding: 10px;
+    width: -webkit-fill-available;
+    transition: background-color .3s ease-in-out;
+    font-size: 14pt;
+}
+
+.btn-primary:hover {
+    background-color: var(--evening-sea-600);
+}
+
+.btn-primary:active {
+    background-color: var(--evening-sea-950);
+}
+
+#form-task {
+    position: absolute;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    top: 0%;
+    border-radius: 8px;
+    background-color: rgb(30, 30, 30, .69);
+}
+
+.form-new-task {
+    background-color: var(--vulcan-900);
+    color: var(--vulcan-100);
+    margin: 12px 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding: 12px;
+    top: 18%;
+    position: absolute;
+    width: -webkit-fill-available;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container input,
+.input-container textarea {
+    background-color: transparent;
+    padding: 10px;
+    color: var(--vulcan-100);
+    resize: vertical;
+    font-size: 12pt;
+}
+
+input:focus-visible {
+    border: initial;
+    box-shadow: none;
+}
+
+.btn-primary.cancel {
+    background-color: var(--loulou-700);
+}
+
+.title-input {
+    border: solid 1px var(--vulcan-500);
+    border-radius: 8px 8px 0 0;
+}
+
+.description-input {
+    border: solid 1px var(--vulcan-500);
+    border-radius: 0 0 8px 8px;
+}
+
+#form-task[data-form-task='hide'] {
+    display: none;
+}
+
+@media (min-width : 1024px) {
+    #new-task {
+        width: auto;
+        top: 0;
+        right: 0;
+        height: fit-content;
+    }
+    .task-text {
+        width: calc(calc(calc(100vw - 32px) / 6)* 5);
+    }
+    .task-menu, .task-options{
+        width: calc(calc(calc(100vw - 32px) / 6)* 1);
+    }
+    .task-component[data-options='show'] {
+        transform: translatex(calc(-1* calc(calc(100vw - 32px) / 6)));
+    }
+}
+
+@media (min-width : 1440px) {
+    #new-task {
+        width: auto;
+        top: 0;
+        right: 0;
+        height: fit-content;
+    }
+    .task-container{
+        width: calc(calc(calc(100vw - 32px) / 12)* 6);
+    }
+    .task-text {
+        width: calc(calc(calc(100vw - 32px) / 12)* 5);
+    }
+    .task-menu, .task-options{
+        width: calc(calc(calc(100vw - 32px) / 12)* 1);
+    }
+    .task-component[data-options='show'] {
+        transform: translatex(calc(-1* calc(calc(100vw - 32px) / 12)));
+    }
+}
